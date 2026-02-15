@@ -1,0 +1,514 @@
+@charset "UTF-8";
+
+/* ===== VARIÁVEIS ===== */
+:root {
+    --preto: #000000;
+    --preto-suave: #1a1a1a;
+    --cinza-escuro: #333333;
+    --cinza-medio: #666666;
+    --cinza-claro: #f5f5f5;
+    --bege: #f8f4f0;
+    --branco: #ffffff;
+    --dourado: #b89b7b;
+    --dourado-escuro: #8b7356;
+    --fonte-titulo: 'Cormorant Garamond', serif;
+    --fonte-corpo: 'Montserrat', sans-serif;
+    --transicao: all 0.3s ease;
+}
+
+/* ===== RESET E ESTILOS GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--cinza-escuro);
+    background-color: var(--branco);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4 {
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.titulo-principal {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--preto);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--cinza-medio);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--preto);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--dourado);
+}
+
+.titulo-branco {
+    color: var(--branco);
+}
+
+.titulo-branco::after {
+    background-color: var(--branco);
+}
+
+.destaque-negrito {
+    font-weight: 600;
+    color: var(--preto);
+}
+
+.destaque-italico {
+    font-style: italic;
+    color: var(--dourado-escuro);
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+    background-color: var(--branco);
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.imagem-cabecalho {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid var(--branco);
+    transition: var(--transicao);
+}
+
+.imagem-cabecalho:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.titulos-cabecalho {
+    flex: 1;
+}
+
+/* ===== SEÇÕES ===== */
+.secao {
+    padding: 80px 0;
+}
+
+.secao-cinza {
+    background-color: var(--cinza-claro);
+}
+
+.secao-preta {
+    background-color: var(--preto-suave);
+    color: var(--branco);
+}
+
+.secao-destaque {
+    background: linear-gradient(135deg, var(--bege) 0%, var(--branco) 100%);
+    padding: 60px 0;
+    font-size: 1.2rem;
+}
+
+.secao-destaque-final {
+    background: linear-gradient(135deg, var(--preto-suave) 0%, var(--preto) 100%);
+    color: var(--branco);
+    text-align: center;
+}
+
+.secao-destaque-final .titulo-secao {
+    color: var(--branco);
+}
+
+.secao-destaque-final .titulo-secao::after {
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--dourado);
+}
+
+/* ===== GRID ===== */
+.grid-2-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* ===== IMAGENS ===== */
+.imagem-secao {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    transition: var(--transicao);
+}
+
+.imagem-secao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 35px -10px rgba(0,0,0,0.2);
+}
+
+/* Estilo especial para a imagem da Coco Chanel */
+.container-imagem-chanel {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.imagem-chanel {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 25px -5px rgba(0,0,0,0.3);
+    border: 2px solid var(--dourado);
+    transition: var(--transicao);
+}
+
+.imagem-chanel:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 30px -5px rgba(0,0,0,0.4);
+}
+
+/* ===== CITAÇÕES ===== */
+.citacao {
+    margin: 30px 0;
+    padding: 20px 30px;
+    border-left: 3px solid var(--dourado);
+    background-color: var(--bege);
+    font-style: italic;
+}
+
+.citacao p {
+    font-size: 1.2rem;
+    color: var(--preto-suave);
+    margin-bottom: 10px;
+}
+
+.citacao cite {
+    font-size: 0.9rem;
+    color: var(--cinza-medio);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.citacao-branca {
+    background-color: rgba(255,255,255,0.1);
+    border-left-color: var(--branco);
+}
+
+.citacao-branca p {
+    color: var(--branco);
+}
+
+.citacao-branca cite {
+    color: var(--dourado);
+}
+
+/* ===== CARDS (Segunda Guerra) ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: var(--transicao);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.titulo-card {
+    font-size: 1.3rem;
+    color: var(--preto);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dourado);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--cinza-medio);
+}
+
+/* ===== TEXTO BRANCO EM FUNDO ESCURO ===== */
+.texto-branco {
+    color: var(--branco);
+}
+
+.texto-branco .destaque-negrito {
+    color: var(--dourado);
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+    background-color: var(--preto-suave);
+    color: var(--branco);
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.linha-decorativa {
+    width: 80px;
+    height: 2px;
+    background-color: var(--dourado);
+    margin: 0 auto 40px;
+}
+
+.fontes h4 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--dourado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lista-fontes {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px;
+    max-width: 600px;
+    columns: 2;
+    column-gap: 40px;
+}
+
+.lista-fontes li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--cinza-claro);
+    position: relative;
+    padding-left: 15px;
+    break-inside: avoid;
+}
+
+.lista-fontes li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--dourado);
+}
+
+.assinatura {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--branco);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.direitos {
+    font-size: 0.8rem;
+    color: var(--cinza-medio);
+}
+
+/* ===== RESPONSIVIDADE AVANÇADA ===== */
+/* Para TVs e telas muito grandes (acima de 1200px) */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .titulo-principal {
+        font-size: 5rem;
+    }
+    
+    .titulo-secao {
+        font-size: 3rem;
+    }
+}
+
+/* Para notebooks e desktops (992px - 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .titulo-principal {
+        font-size: 3.5rem;
+    }
+    
+    .grid-2-colunas {
+        gap: 40px;
+    }
+}
+
+/* Para tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .titulo-principal {
+        font-size: 3rem;
+    }
+    
+    .titulo-secao {
+        font-size: 2.2rem;
+    }
+    
+    .grid-2-colunas {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .coluna-imagem {
+        order: -1;
+    }
+    
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cabecalho-conteudo {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .imagem-cabecalho {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Para celulares grandes (576px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .titulo-principal {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    .titulo-secao {
+        font-size: 2rem;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lista-fontes {
+        columns: 1;
+    }
+    
+    .secao {
+        padding: 50px 0;
+    }
+    
+    .citacao p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Para celulares pequenos (abaixo de 575px) */
+@media (max-width: 575px) {
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    
+    .titulo-secao {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .citacao {
+        padding: 15px 20px;
+    }
+    
+    .citacao p {
+        font-size: 1rem;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .imagem-cabecalho {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .cabecalho {
+        padding: 20px 0;
+    }
+}
+/* Estilo para a imagem da Era do Jazz */
+.container-imagem-jazz {
+    margin: 30px 0 0;
+    text-align: center;
+}
+
+.imagem-jazz {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 15px 25px -5px rgba(0,0,0,0.2);
+    border: 2px solid var(--dourado);
+    transition: var(--transicao);
+}
+
+.imagem-jazz:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 30px -5px rgba(0,0,0,0.25);
+}
+/* Para celulares muito pequenos (abaixo de 360px) */
+@media (max-width: 359px) {
+    .titulo-principal {
+        font-size: 1.5rem;
